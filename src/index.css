@@ -1,0 +1,12 @@
+.active {
+  color: red;
+}
+
+.nav-link {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.dropdown a {
+  cursor: pointer;
+}

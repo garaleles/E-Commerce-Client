@@ -1,10 +1,24 @@
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home.js';
+import Login from './pages/Login.js';
+import Register from './pages/Register.js';
+import { AuthProvider } from './context/Auth.js';
+import Main from './components/nav/Main.js';
 
 function App() {
   return (
-    <div>
-      <h1 className='display-1 bg-primary text-light p-2'>App</h1>
-    </div>
+    <>
+      <BrowserRouter>
+        <AuthProvider>
+          <Main />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+          </Routes>
+        </AuthProvider>
+      </BrowserRouter>
+    </>
   );
 }
 
